@@ -51,7 +51,7 @@ class User extends Authenticatable
     protected $appends = ['picture_url'];
 
     public function getPictureUrlAttribute() {
-        $hostname = env('GOOGLE_CLOUD_STORAGE_HOSTNAME', '');
+        $hostname = env('STORAGE_HOSTNAME', '');
         if($this->picture) {
             return $hostname . $this->picture;
         }

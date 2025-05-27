@@ -29,7 +29,6 @@ return [
     */
 
     'disks' => [
-
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
@@ -78,7 +77,8 @@ return [
         ],
         'local_image' => [
             'driver' => 'local',
-            'root' => '/home/data/images', // absolute path on your machine
+            // 'root' => '/home/data/images', // absolute path on your machine
+            'root' => storage_path('app/images'),
             'url' => env('APP_URL') . '/images',
             'visibility' => 'public',
         ],
