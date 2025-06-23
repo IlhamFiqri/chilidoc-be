@@ -69,6 +69,7 @@ class HistoryController extends Controller
             $disease = $predict['Disease'];
             $prevention = $predict['Prevention'];
             $treatment = $predict['Treatment'];
+            $bio_treatment = $predict['BiologicalTreatment'];
 
             $disk = Storage::disk('local_image');
             $file = $disk->put('history', $request->file('image'));
@@ -83,6 +84,7 @@ class HistoryController extends Controller
             $history->disease = $disease;
             $history->prevention = $prevention;
             $history->treatment = $treatment;
+            $history->bio_treatment = $bio_treatment;
             $history->save();
             return ResponseHelper::sendResponse($history, 'History Berhasil diBuat!', 200);
 
